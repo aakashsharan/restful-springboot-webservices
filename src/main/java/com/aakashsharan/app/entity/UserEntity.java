@@ -1,9 +1,6 @@
 package com.aakashsharan.app.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -14,18 +11,24 @@ public class UserEntity implements Serializable {
     @GeneratedValue
     private long id;
 
+    @Column(nullable = false)
     private String userId;
 
+    @Column(nullable = false, length = 100)
     private String firstName;
 
+    @Column(nullable = false, length = 100)
     private String lastName;
 
+    @Column(nullable = false, length = 200)
     private String email;
 
+    @Column(nullable = false)
     private String encryptedPassword;
 
     private String emailVerificationToken;
 
+    @Column(nullable = false)
     private Boolean emailVerificationStatus = false;
 
     public long getId() {
